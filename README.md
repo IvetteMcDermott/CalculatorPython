@@ -19,7 +19,7 @@ Styled with helvetic font, and colors picked in blue scale.
 As part of the feedback to the user it not just print the click number in the 'screen' but the button that is click has a change in the color, it goes when released.
 Python file converted to executable with Pyinstaller by CMD.
 
-If want to download the exe file it can be click [here](https://drive.google.com/file/d/1EHQbT14v4eo0uyrJFfrGNebb_-sC2BEB/view?usp=sharing)
+If want to download the exe file of the first release click [here](https://drive.google.com/file/d/1EHQbT14v4eo0uyrJFfrGNebb_-sC2BEB/view?usp=sharing)
 
 The file is being storage in Google Drive, and being exe it flags risk but it is a copy of the one in this repo.
 
