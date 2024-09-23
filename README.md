@@ -20,7 +20,7 @@ As part of the feedback to the user it not just print the click number in the 's
 Python file converted to executable with Pyinstaller by CMD.
 
 
-[If want to download the exe file of the first release click (https://drive.google.com/file/d/1EHQbT14v4eo0uyrJFfrGNebb_-sC2BEB/view?usp=sharing) ]:
+[If want to download the exe file of the first release click (https://drive.google.com/file/d/1EHQbT14v4eo0uyrJFfrGNebb_-sC2BEB/view?usp=sharing) ]: #
 
 
 The file is being storage in Google Drive, and being exe it flags risk but it is a copy of the one in this repo.
