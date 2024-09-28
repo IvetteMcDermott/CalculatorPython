@@ -54,98 +54,76 @@ e.grid(row=1, column=0, columnspan=5, padx=10, pady=10, sticky="ewns")
 #                    )
 
 
+# func to collect the entry
+def button_click(number):
+    current= e.get()
+
+    if number == '.':
+        if '.' in current:
+        # Check if result already has a decimal point
+            return  # Ignore additional decimal points
+        # number += current  
+    e.delete(0, END)
+
+    e.insert(0, str(current) + str(number))
+    return
+
 # func to clear e
 def clear_e():
     e.delete(0, END)
 
-# func to collect the entry
-def button_click(number):
-    current= e.get()
-    clear_e()
-    e.insert(0, str(current) + str(number))
-    return
-
-# func to validate nums
-def nums_exist(x):
-    if x == '' or x is None:
-        e.insert(0, 'ERROR')
-        e.after(3000, clear_e)
-    else:
-        pass
-
 # func add 
 def btn_add():
-    # get the first number and check is valid
     n1 = e.get()
-    nums_exist(n1)
-    # assign global variables so that can be use in next function
     global num_1
     global operator
     operator = '+'
-    num_1 = int(n1)
-    # clear the e so the second number for the op can be entry
-    clear_e()
+    num_1 = float(n1)
+    e.delete(0, END)
 
-def btn_subt():
-    # get the first number and check is valid
+
+def btn_subst():
     n1 = e.get()
-    nums_exist(n1)
-    # assign global variables so that can be use in next function
     global num_1
     global operator
     operator = '-'
-    num_1 = int(n1)
-    # clear the e so the second number for the op can be entry
-    clear_e()
+    num_1 = float(n1)
+    e.delete(0, END)
+
 
 def btn_mult():
-    # get the first number and check is valid
     n1 = e.get()
-    nums_exist(n1)
-    # assign global variables so that can be use in next function
     global num_1
     global operator
     operator = '*'
-    num_1 = int(n1)
-    # clear the e so the second number for the op can be entry
-    clear_e()
+    num_1 = float(n1)
+    e.delete(0, END)
+
 
 def btn_div():
-    # get the first number and check is valid
     n1 = e.get()
-    nums_exist(n1)
-    # assign global variables so that can be use in next function
     global num_1
     global operator
     operator = '/'
-    num_1 = int(n1)
-    # clear the e so the second number for the op can be entry
-    clear_e()
+    num_1 = float(n1)
+    e.delete(0, END)
+
 
 def result():
-    # get the second number and check is valid
-    n2 = e.get()
-    nums_exist(n2)
-    num_2 = int(n2)
-    # clear the e so the result  for the op can be entry
-    clear_e()
-    # global that allows to use the result as n1 and continue chained ops 
-    global result
-    # conditional for the op to process
+    num_2 = e.get()
+    e.delete(0, END)
     if operator == '+':
-        result = int(num_1) + int(num_2)
+        result = float(num_1) + float(num_2)
         e.insert(0, result)
     elif operator == '-':
-        result = int(num_1) - int(num_2)
+        result = float(num_1) - float(num_2)
         e.insert(0, result)
     elif operator == '*':
-        result = int(num_1) * int(num_2)
+        result = float(num_1) * float(num_2)
         e.insert(0, result)
     elif operator == '/':
-        result = int(num_1) / int(num_2)
+        result = float(num_1) / float(num_2)
         e.insert(0, result)
-    else:
-        e.insert(0, 'ERROR')
 
 
 # Buttons
@@ -165,17 +143,15 @@ btn_9 = Button(root, text="9", padx=18, pady=4, bg='#5790ab', bd=1, fg='#d0d7e1'
 btn_0 = Button(root, text="0", padx=53, pady=4, bg='#5790ab', bd=1, fg='#d0d7e1', activebackground='#064469', font=("Helvetica"), command=lambda: button_click(0))
 btn_dot = Button(root, text=". ", padx=18, pady=4, bg='#5790ab', bd=1, fg='#d0d7e1', activebackground='#064469', font=("Helvetica"), command=lambda: button_click('.'))
 
-# functional buttons
 btn_clear = Button(root, text="C", padx=18, pady=4, bg='#5790ab', bd=1, fg='#d0d7e1', activebackground='#064469', font=("Helvetica"), command=clear_e)
 
 btn_equal = Button(root, text="=", padx=18, pady=4, bg='#5790ab', bd=1, fg='#d0d7e1', activebackground='#064469', font=("Helvetica"), command=result)
-
 btn_adding = Button(root, text="+", padx=18, pady=4, bg='#5790ab', bd=1, fg='#d0d7e1', activebackground='#064469', font=("Helvetica"), command=btn_add)
-btn_subtraction = Button(root, text=" -", padx=18, pady=4, bg='#5790ab', bd=1, fg='#d0d7e1', activebackground='#064469', font=("Helvetica"), command=btn_subt)
+btn_substration = Button(root, text=" -", padx=18, pady=4, bg='#5790ab', bd=1, fg='#d0d7e1', activebackground='#064469', font=("Helvetica"), command=btn_subst)
 btn_multiplication = Button(root, text=" *", padx=18, pady=4, bg='#5790ab', bd=1, fg='#d0d7e1', activebackground='#064469', font=("Helvetica"), command=btn_mult)
 btn_division = Button(root, text=" /", padx=18, pady=4, bg='#5790ab', bd=1, fg='#d0d7e1', activebackground='#064469', font=("Helvetica"), command=btn_div)
 
-# btns grid
+#buttons display
 btn_1.grid(row=4, column=0)
 btn_2.grid(row=4, column=1)
 btn_3.grid(row=4, column=2)
@@ -196,9 +172,10 @@ btn_equal.grid(row=5, column=4, rowspan=2)
 btn_clear.grid(row=2, column=4)
 
 btn_adding.grid(row=2, column=3)
-btn_subtraction.grid(row=3, column=3)
+btn_substration.grid(row=3, column=3)
 btn_multiplication.grid(row=4, column=3)
 btn_division.grid(row=5, column=3)
+
 
 # Run the app's main loop or nothing happens
 root.mainloop()
