@@ -62,7 +62,6 @@ def button_click(number):
         if '.' in current:
         # Check if result already has a decimal point
             return  # Ignore additional decimal points
-        # number += current  
     e.delete(0, END)
 
     e.insert(0, str(current) + str(number))

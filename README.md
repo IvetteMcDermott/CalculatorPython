@@ -20,7 +20,7 @@ As part of the feedback to the user it not just print the click number in the 's
 Python file converted to executable with Pyinstaller by CMD.
 
 
-[If want to download the exe file of the first release click (https://drive.google.com/file/d/1EHQbT14v4eo0uyrJFfrGNebb_-sC2BEB/view?usp=sharing) ]: #
+If want to download the exe file of the second release click [here](https://drive.google.com/file/d/1EHQbT14v4eo0uyrJFfrGNebb_-sC2BEB/view?usp=sharing)
 
 
 The file is being storage in Google Drive, and being exe it flags risk but it is a copy of the one in this repo.
@@ -33,7 +33,12 @@ The file is being storage in Google Drive, and being exe it flags risk but it is
     **19/01/24**  The result (=) can be use as parameter for a next process if selecting an operator. 
     **BUG to fix:**  Digits can be add to the result. 
 - Use of 'list' to storage the process.
-- Refactor the operators code.
+- Refactor the operators code. **SORTED 28/9**
+  
+  **UPDATE 28/9**
+
+- Stop the entry of a second '.', if enter it would be ignore.
+- Release of version2 of the exe file
 
 
 ## CREDITS:
